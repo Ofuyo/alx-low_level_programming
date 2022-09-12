@@ -5,7 +5,7 @@
 /**
  * main - reverse alphabet
  *
- * return: (0)
+ * Return: (0)
  *
  */
 
