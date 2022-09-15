@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include "main.h"
+
 /**
- * print_number - Prints a number
+ * print_number - Prints an integer
  * @n: The number to print
  */
+
 void print_number(int n)
 {
 	unsigned int num = n;
