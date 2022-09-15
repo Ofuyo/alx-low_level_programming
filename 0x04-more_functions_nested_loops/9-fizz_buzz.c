@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 /**
  * main - program that prints either number
  * Return: returns 0
