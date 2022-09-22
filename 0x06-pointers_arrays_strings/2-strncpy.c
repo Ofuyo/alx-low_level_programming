@@ -1,12 +1,11 @@
 #include "main.h"
-#include <string.h>
 
 /**
  * _strncpy - c function that copies a string,include the terminating null byte
  * @dest: buffer storing the string copy
  * @src: the source string
  * @n: max number of bytes copied
- * Returns: returns
+ * Return: returns
  */
 
 char *_strncpy(char *dest, char *src, int n)
