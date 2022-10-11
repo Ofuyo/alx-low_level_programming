@@ -2,33 +2,47 @@
 #include "dog.h"
 
 /**
- * _copy - Make a copy of passed in argument
- * @src: Data to make copy of
+ * new_dog - creates a new dog
+ * @name: name of dog
+ * @age: age of dog
+ * @owner: owner of dog
+ *
  * Return: Pointer
  */
 
-char *_copy(char *src)
+dog_t *new_dog(char *name, float age, char *owner)
 {
-	char *ptr;
-	int i, len;
+	unsigned int nl, ol, i;
+	dog_t *dog;
 
-	if (src == NULL)
-	{
+	if (name == NULL || owner == NULL)
 		return (NULL);
-	}
-	for (len = 0; src[len] != '\0'; len++)
+	dog = malloc(sizeof(dog_t));
+	if (dog == NULL)
+		return (NULL);
+	for (nl = 0; name[nl]; nl++)
 		;
-
-	ptr = malloc(sizeof(char) * (len + 1));
-
-	if (ptr == NULL)
+	nl++;
+	dog->name = malloc(nl * sizeof(char));
+	if (dog->name == NULL)
 	{
+		free(dog);
 		return (NULL);
 	}
-	for (i = 0; src[i] != '\0'; i++)
+	for (i = 0; i < nl; i++)
+		dog->name[i] = name[i];
+	dog->age = age;
+	for (ol = 0; owner[ol]; ol++)
+		;
+	ol++;
+	dog->owner = malloc(ol * sizeof(char));
+	if (dog->owner == NULL)
 	{
-		ptr[i] = src[i];
+		free(dog->name);
+		free(dog);
+		return (NULL);
 	}
-	ptr[i] = '\0';
-	return (ptr);
+	for (i = 0; i < ol; i++)
+		dog->owner[i] = owner[i];
+	return (dog);
 }
