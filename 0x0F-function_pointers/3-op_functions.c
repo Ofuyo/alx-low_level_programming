@@ -3,6 +3,18 @@
 #include <stdlib.h>
 
 /**
+ * op_sub - subtracts b from a
+ * @a: first number
+ * @b: second number
+ * Return: difference of a and b
+ */
+
+int op_sub(int a, int b)
+{
+	return (a - b);
+}
+
+/**
  * op_add - adds a and b
  * @a: first number
  * @b: second number
