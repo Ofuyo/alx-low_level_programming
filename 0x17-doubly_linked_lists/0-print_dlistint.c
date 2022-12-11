@@ -7,11 +7,19 @@
  * Return: printed elements in the list
  */
 
-void print_dlistint(const dlistint_t *h)
+size_t print_dlistint(const dlistint_t *h)
 {
-	while (h)
+	size_t nelem;
+
+	nelem = 0;
+	while (h != NULL)
 	{
-		printf("%d\n", h->n);
+		if (h->str == NULL)
+			printf("[%d] %s\n", 0, "(nil)");
+		else
+			printf("[%d] %s\n", h->len, h->str);
 		h = h->next;
+		nelem++;
 	}
+	return (nelem);
 }
